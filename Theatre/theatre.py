@@ -6,6 +6,8 @@ movie = []
 currentData = []
 ticketPrice = 0
 showTimeSeats = []
+revenues = 0
+totalRevenue = []
 
 def checkForAns(ans):
 	answer = ans.lower()
@@ -16,10 +18,12 @@ def checkForAns(ans):
 	else:
 		print "\nEnter Yes or No\n"
 		main()
-
+	# import pdb;pdb.set_trace()
 def updateJson():
 	defaultSeat = showTimeSeats["AvailableSeats"] - seatsReq
 	showTimeSeats["AvailableSeats"] = defaultSeat 
+	total_revenue = showTimeSeats["Revenue"] + ticketPrice
+	showTimeSeats["Revenue"] = total_revenue
 	print showTimeSeats["AvailableSeats"]
 	with open("current_movies.json","w") as f:
 		json.dump(currentData,f)
@@ -112,18 +116,25 @@ class TicketBooking(Movie):
 	def startBooking(self,ans):
 		global seatsReq
 		global showTimeSeats
+		global totalRevenue
 		showTimeSeats = movie['showDetails'][ans]
+		totalRevenue = showTimeSeats['Revenue']
+		print "\n1------>\n",totalRevenue
 		print "\nMovie Name: {}".format(movie['name'])
 		print "\nShow Time: {}".format(json.dumps(showTimeSeats["ShowTime"]))
 		print "\nAvailableSeats: {}".format(json.dumps(showTimeSeats["AvailableSeats"]))
 		seatsReq = int(input("\nEnter the number of seats: \n"))
+		#import pdb;pdb.set_trace()
 		noOfSeat = json.dumps(showTimeSeats["AvailableSeats"])
+		revenue = json.dumps(showTimeSeats["Revenue"])
+
 		self.checkForSeats(noOfSeat)
 
 	def displayShowDetails(self):
 		print "\nMovie Name: {}".format(movie['name'])
 		print "\nDescription: {}".format(movie['description'])
 		print "\nTheatre: {}".format(movie['Theatre'])
+		# print "\nRevenue: {}".format(movie['Revenue'])
 		for showNum in movie["showDetails"]:
 			print "\n<===== {} =====>".format(json.dumps(showNum))	
 		ans = int(input("\nEnter show\t0 or 1?\nIf Availbale show is Single Please Enter '0'\n"))
@@ -137,11 +148,13 @@ class TicketBooking(Movie):
 		 	else:
 				global movie
 				movie = currentData[movieNum]
+				# revenues = currentData[Revenue]
 				self.displayShowDetails()		
 
 newTicket = TicketBooking()
 
 def main():
+	# import pdb;pdb.set_trace()
 	print "<====== WECOME TO TICKET NEW ======>\n"
 	ans = raw_input("Do you want to book?\tYes or No\n\n")
 	if (checkForAns(ans) == 1):

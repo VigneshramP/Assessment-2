@@ -1,5 +1,5 @@
-showDetails,description,third,name,second,Theatre,first
-"[{u'ShowTime': u'10:00am', u'AvailableSeats': 48}, {u'ShowTime': u'18:00pm', u'AvailableSeats': 47}]",American superhero film based on the Marvel Comics superhero team the Avengers,380,Avengers-Endgame,400,Sathyam,450
-"[{u'ShowTime': u'14:00pm', u'AvailableSeats': 45}]","American science fiction adventure film it follows an astronaut who goes into space in search of his lost father, whose experiment threatens the Solar System.",280,AD ASTRA,300,Sathyam,350
-"[{u'ShowTime': u'10:00am', u'AvailableSeats': 0}, {u'ShowTime': u'15:00pm', u'AvailableSeats': 25}]",American epic space-opera film and the final episode of the nine - part Skywalker saga ,380,STAR WARS : THE RISE IF SKYWALKER,400,Luxe Mini,450
-"[{u'ShowTime': u'16:30pm', u'AvailableSeats': 20}]",American superhero film based on the Marvel Comics superhero team the Avengers,280,Avengers-Endgame - LUXE MINI,300,Luxe Mini,350
+showDetails,name,third,description,second,Theatre,first
+"[{u'ShowTime': u'10:00am', u'AvailableSeats': 50, u'Revenue': 0}, {u'ShowTime': u'18:00pm', u'AvailableSeats': 50, u'Revenue': 0}]",Avengers-Endgame,380,American superhero film based on the Marvel Comics superhero team the Avengers,400,Sathyam,450
+"[{u'ShowTime': u'14:00pm', u'AvailableSeats': 50, u'Revenue': 0}]",AD ASTRA,280,"American science fiction adventure film it follows an astronaut who goes into space in search of his lost father, whose experiment threatens the Solar System.",300,Sathyam,350
+"[{u'ShowTime': u'10:00am', u'AvailableSeats': 25, u'Revenue': 0}, {u'ShowTime': u'15:00pm', u'AvailableSeats': 25}]",STAR WARS : THE RISE IF SKYWALKER,380,American epic space-opera film and the final episode of the nine - part Skywalker saga ,400,Luxe Mini,450
+"[{u'ShowTime': u'16:30pm', u'AvailableSeats': 25, u'Revenue': 0}]",Avengers-Endgame 3D,280,American superhero film based on the Marvel Comics superhero team the Avengers,300,Luxe Mini,350
